@@ -1,4 +1,6 @@
 #8-10.py
+from math import sqrt
+
 def send_messages(mess):
     while mess:
         ms_temp = mess.pop()
