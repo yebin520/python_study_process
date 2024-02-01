@@ -1,0 +1,26 @@
+import parsel
+html = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>标签选择器</title>
+</head>
+<style>
+    p{
+        color: #f00;
+        font-size:16px;
+    }
+</style>
+<body>
+    <p class="top">css标签选择器<p>
+    <p class="top">标签选择器，类选择器，ID选择器</p>
+    <a href="https://www.baidu.com">百度一下</a>
+    <span>我是一个span标签</span>
+
+</body>
+</html>
+"""
+selector = parsel.Selector(html)
+result = selector.css('.top').getall()
+print(result)
